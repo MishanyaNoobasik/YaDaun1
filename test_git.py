@@ -1,26 +1,13 @@
-def valid_braces(string):
-    if len(string) % 2 == 0:
-        d = {'(': ')', '{': '}', '[': ']'}
-        a = len(string) / 2
-        sstring = []
-        for j in range(len(string)):
-            sstring.append(string[j])
-        print(sstring)
-        for i in range(int(a)):
-            if sstring[i] == d.get(sstring[i + 1]):
-                sstring.pop(i)
-                sstring.pop(i)
-            else:
-                pass
-        print(sstring)
-        if len(sstring) > 0:
-            res = False
-        else:
-            res = True
-    else:
-        res = False
-    return res
+def make_looper(string):
+    import os
+    f = open('t.txt', 'a')
+    f.write('1')
+    f.close()
+    stat = os.stat('t.txt')
+    print(stat.st_size)
+    a = stat.st_size % len(string)
+    return string[a - 1]
 
 
-aa = '()'
-print(valid_braces(aa))
+a = '12aerhetntntrnrtanatenate3'
+print(make_looper(a))
